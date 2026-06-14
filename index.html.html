@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Vũ Lê Travel – Thuê xe du lịch từ Sài Gòn đi tỉnh. Xe 4, 7, 16 chỗ. Giá trọn gói, đón tận nơi. Gọi 0813 913 091.">
+<title>Vũ Lê Travel – Thuê Xe Du Lịch Giá Tốt</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:#1E293B;background:#fff;overflow-x:hidden}
+
+/* ── TOPBAR ── */
+.topbar{background:#0F172A;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:58px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.logo{font-family:'Baloo 2',cursive;font-size:1.35rem;font-weight:800;color:#fff;text-decoration:none}
+.logo span{color:#FACC15}
+.topbar-call{background:#FACC15;color:#0F172A;font-weight:700;font-size:.85rem;padding:.45rem 1.1rem;border-radius:999px;text-decoration:none;display:flex;align-items:center;gap:.35rem;white-space:nowrap}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(150deg,#0284C7 0%,#0EA5E9 40%,#1E293B 100%);padding:56px 5% 48px;position:relative;overflow:hidden}
+.hero-sun{position:absolute;top:-80px;right:-40px;width:260px;height:260px;background:radial-gradient(circle,#FDE68A 20%,#FACC15 50%,transparent 72%);border-radius:50%;opacity:.45;pointer-events:none}
+.hero-road{position:absolute;bottom:0;left:0;right:0;height:6px;background:repeating-linear-gradient(90deg,#FACC15 0,#FACC15 36px,transparent 36px,transparent 72px);opacity:.5}
+.hero-inner{position:relative;z-index:2;max-width:540px}
+.hero-badge{display:inline-block;background:rgba(250,204,21,.18);border:1px solid rgba(250,204,21,.5);color:#FACC15;font-size:.72rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;padding:.28rem .8rem;border-radius:999px;margin-bottom:1rem}
+.hero h1{font-family:'Baloo 2',cursive;font-size:clamp(2rem,7vw,3.6rem);font-weight:800;color:#fff;line-height:1.1;margin-bottom:.9rem}
+.hero h1 em{color:#FACC15;font-style:normal}
+.hero-desc{color:rgba(255,255,255,.85);font-size:.97rem;line-height:1.65;margin-bottom:1.8rem}
+.hero-btns{display:flex;gap:.85rem;flex-wrap:wrap}
+.btn-call{background:#FACC15;color:#0F172A;font-family:'Baloo 2',cursive;font-weight:800;font-size:1.05rem;padding:.9rem 2rem;border-radius:999px;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;box-shadow:0 4px 20px rgba(250,204,21,.5);transition:transform .15s}
+.btn-call:active{transform:scale(.97)}
+.btn-outline{background:rgba(255,255,255,.13);color:#fff;font-weight:600;font-size:.95rem;padding:.9rem 1.6rem;border-radius:999px;text-decoration:none;border:1px solid rgba(255,255,255,.35)}
+
+/* ── STATS ── */
+.stats{background:#1E293B;display:flex;justify-content:center;gap:clamp(1.2rem,6vw,4rem);padding:1rem 5%;flex-wrap:wrap}
+.stat{text-align:center;padding:.3rem 0}
+.stat-n{font-family:'Baloo 2',cursive;font-size:1.5rem;font-weight:800;color:#FACC15;line-height:1}
+.stat-l{font-size:.68rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.7px;margin-top:.15rem}
+
+/* ── WHY ── */
+.why{background:#FFF7E6;padding:60px 5%}
+.sec-head{text-align:center;margin-bottom:2.4rem}
+.sec-title{font-family:'Baloo 2',cursive;font-size:clamp(1.5rem,4vw,2.1rem);font-weight:800;color:#1E293B}
+.sec-line{display:block;width:44px;height:4px;background:#FACC15;border-radius:2px;margin:.5rem auto .7rem}
+.sec-sub{color:#64748B;font-size:.9rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;max-width:900px;margin:0 auto}
+.card{background:#fff;border-radius:14px;padding:1.6rem 1.3rem;text-align:center;box-shadow:0 2px 14px rgba(0,0,0,.07)}
+.card-ico{font-size:2.3rem;margin-bottom:.8rem}
+.card h3{font-family:'Baloo 2',cursive;font-weight:700;font-size:1rem;color:#1E293B;margin-bottom:.4rem}
+.card p{font-size:.82rem;color:#64748B;line-height:1.6}
+
+/* ── PRICES ── */
+.prices{background:#fff;padding:60px 5%}
+.tbl-wrap{max-width:720px;margin:0 auto;border-radius:14px;overflow:hidden;box-shadow:0 4px 28px rgba(0,0,0,.1)}
+table{width:100%;border-collapse:collapse}
+thead tr{background:linear-gradient(90deg,#0284C7,#38BDF8)}
+th{padding:.95rem 1.2rem;font-family:'Baloo 2',cursive;font-weight:700;font-size:.88rem;color:#fff;text-transform:uppercase;letter-spacing:.4px}
+th:first-child{text-align:left}
+th:not(:first-child){text-align:center}
+tbody tr{border-bottom:1px solid #F1F5F9}
+tbody tr:last-child{border-bottom:none}
+tbody tr:nth-child(odd){background:#fff}
+tbody tr:nth-child(even){background:#F8FAFC}
+td{padding:.85rem 1.2rem;font-size:.88rem}
+td:first-child{font-weight:600;color:#1E293B}
+td:not(:first-child){text-align:center;font-family:'Baloo 2',cursive;font-weight:700;color:#0284C7;font-size:.95rem}
+.tbl-note{text-align:center;color:#94A3B8;font-size:.76rem;margin-top:1rem;font-style:italic}
+
+/* ── STEPS ── */
+.steps-sec{background:#FFF7E6;padding:60px 5%}
+.steps{display:flex;justify-content:center;gap:1.8rem;flex-wrap:wrap;max-width:820px;margin:0 auto}
+.step{flex:1;min-width:160px;max-width:190px;text-align:center}
+.step-num{width:52px;height:52px;background:linear-gradient(135deg,#0EA5E9,#0284C7);color:#fff;font-family:'Baloo 2',cursive;font-weight:800;font-size:1.3rem;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto .9rem;box-shadow:0 4px 14px rgba(14,165,233,.4)}
+.step h4{font-family:'Baloo 2',cursive;font-weight:700;font-size:.97rem;color:#1E293B;margin-bottom:.35rem}
+.step p{font-size:.8rem;color:#64748B;line-height:1.55}
+
+/* ── CTA ── */
+.cta{background:linear-gradient(130deg,#0F172A 0%,#0369A1 100%);padding:64px 5%;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;background:radial-gradient(circle,rgba(14,165,233,.25),transparent 65%);border-radius:50%;pointer-events:none}
+.cta h2{font-family:'Baloo 2',cursive;font-size:clamp(1.7rem,5vw,2.5rem);font-weight:800;color:#fff;margin-bottom:.6rem;position:relative}
+.cta h2 span{color:#FACC15}
+.cta p{color:rgba(255,255,255,.7);margin-bottom:1.8rem;font-size:.95rem}
+.phone-btn{display:inline-flex;align-items:center;gap:.7rem;background:#FACC15;color:#0F172A;font-family:'Baloo 2',cursive;font-size:clamp(1.5rem,5vw,2.1rem);font-weight:800;padding:.95rem 2.2rem;border-radius:999px;text-decoration:none;box-shadow:0 6px 28px rgba(250,204,21,.5);transition:transform .15s}
+.phone-btn:active{transform:scale(.97)}
+.socials{display:flex;justify-content:center;gap:.9rem;flex-wrap:wrap;margin-top:1.4rem}
+.soc-btn{display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:.85rem;font-weight:500;padding:.5rem 1.1rem;border-radius:999px;text-decoration:none}
+
+/* ── FOOTER ── */
+footer{background:#0F172A;color:rgba(255,255,255,.45);text-align:center;padding:1.5rem 5%;font-size:.78rem}
+footer strong{color:#FACC15}
+
+/* ── FLOAT BUTTON ── */
+.float-btn{position:fixed;bottom:24px;right:20px;z-index:9999;width:58px;height:58px;background:#22C55E;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;text-decoration:none;box-shadow:0 4px 20px rgba(34,197,94,.55);animation:ring 2.2s infinite}
+@keyframes ring{0%,100%{box-shadow:0 4px 20px rgba(34,197,94,.55)}50%{box-shadow:0 4px 20px rgba(34,197,94,.55),0 0 0 10px rgba(34,197,94,.15)}}
+
+@media(max-width:560px){
+  .topbar-call span{display:none}
+  .hero{padding:44px 5% 40px}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <a class="logo" href="#">Vũ Lê <span>Travel</span></a>
+  <a class="topbar-call" href="tel:0813913091">
+    📞 <span>0813 913 091</span>
+  </a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-sun"></div>
+  <div class="hero-road"></div>
+  <div class="hero-inner">
+    <span class="hero-badge">🚗 Xe du lịch Sài Gòn đi tỉnh</span>
+    <h1>Đặt xe <em>nhanh</em>,<br>Giá <em>trọn gói</em></h1>
+    <p class="hero-desc">Xe 4 chỗ · 7 chỗ · 16 chỗ — mới, sạch, có điều hòa.<br>Tài xế kinh nghiệm, đúng giờ. Đón tận nơi, không phát sinh phí.</p>
+    <div class="hero-btns">
+      <a class="btn-call" href="tel:0813913091">📞 Gọi đặt xe ngay</a>
+      <a class="btn-outline" href="#bang-gia">Xem bảng giá ↓</a>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-n">3</div><div class="stat-l">Loại xe</div></div>
+  <div class="stat"><div class="stat-n">12+</div><div class="stat-l">Tuyến đường</div></div>
+  <div class="stat"><div class="stat-n">0đ</div><div class="stat-l">Phí phát sinh</div></div>
+  <div class="stat"><div class="stat-n">24/7</div><div class="stat-l">Hỗ trợ</div></div>
+</div>
+
+<!-- WHY -->
+<div class="why">
+  <div class="sec-head">
+    <div class="sec-title">Tại sao chọn Vũ Lê Travel?</div>
+    <span class="sec-line"></span>
+    <div class="sec-sub">Đưa bạn đến đúng nơi, đúng giờ, đúng giá.</div>
+  </div>
+  <div class="cards">
+    <div class="card"><div class="card-ico">🚘</div><h3>Xe mới, sạch sẽ</h3><p>4, 7, 16 chỗ — điều hòa mát lạnh, nội thất sạch sẽ thoải mái.</p></div>
+    <div class="card"><div class="card-ico">💰</div><h3>Giá trọn gói</h3><p>Gồm tài xế, xăng dầu, phí cầu đường. Không phát sinh thêm.</p></div>
+    <div class="card"><div class="card-ico">👨‍✈️</div><h3>Tài xế tận tâm</h3><p>Kinh nghiệm, am hiểu đường, thân thiện và luôn đúng giờ.</p></div>
+    <div class="card"><div class="card-ico">📍</div><h3>Đón tận nơi</h3><p>Tài xế đến tận địa chỉ, không cần ra điểm tập trung.</p></div>
+  </div>
+</div>
+
+<!-- PRICES -->
+<div class="prices" id="bang-gia">
+  <div class="sec-head">
+    <div class="sec-title">Bảng Giá Tuyến Đường</div>
+    <span class="sec-line"></span>
+    <div class="sec-sub">Từ Sài Gòn (TP.HCM) — giá 1 chiều, đơn vị VNĐ/chuyến</div>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Tuyến đường</th>
+          <th>🚗 4 chỗ</th>
+          <th>🚙 7 chỗ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>SG → Vũng Tàu</td><td>800K</td><td>900K</td></tr>
+        <tr><td>SG → Mũi Né / Phan Thiết</td><td>1.300K</td><td>1.400K</td></tr>
+        <tr><td>SG → Đà Lạt</td><td>2.400K</td><td>2.600K</td></tr>
+        <tr><td>SG → Nha Trang</td><td>2.500K</td><td>2.700K</td></tr>
+        <tr><td>SG → Mỹ Tho</td><td>800K</td><td>900K</td></tr>
+        <tr><td>SG → TP. Bến Tre</td><td>1.000K</td><td>1.100K</td></tr>
+        <tr><td>SG → TP. Trà Vinh</td><td>1.200K</td><td>1.300K</td></tr>
+        <tr><td>SG → TP. Vĩnh Long</td><td>1.200K</td><td>1.300K</td></tr>
+        <tr><td>SG → TP. Cần Thơ</td><td>1.250K</td><td>1.450K</td></tr>
+        <tr><td>SG → TP. Cà Mau</td><td>2.300K</td><td>2.500K</td></tr>
+        <tr><td>SG → Tây Ninh</td><td>900K</td><td>1.000K</td></tr>
+        <tr><td>SG → Khâu Mộc Bài</td><td>700K</td><td>800K</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="tbl-note">* Giá trọn gói, bao gồm tài xế, xăng dầu và phí cầu đường. Liên hệ để báo giá xe 16 chỗ.</p>
+</div>
+
+<!-- STEPS -->
+<div class="steps-sec">
+  <div class="sec-head">
+    <div class="sec-title">Đặt xe chỉ 3 bước</div>
+    <span class="sec-line"></span>
+    <div class="sec-sub">Nhanh gọn, không rắc rối.</div>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4>Gọi / Nhắn tin</h4>
+      <p>Liên hệ <strong>0813 913 091</strong> báo ngày đi & tuyến đường cần.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4>Xác nhận giá</h4>
+      <p>Nhận báo giá trọn gói, chốt giờ và địa điểm đón ngay.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4>Lên xe thôi!</h4>
+      <p>Tài xế đến đúng giờ, đưa bạn đến nơi an toàn.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+  <h2>Sẵn sàng lên đường? <span>Gọi ngay!</span></h2>
+  <p>Đặt xe nhanh · Giá trọn gói · Tài xế tận tâm</p>
+  <a class="phone-btn" href="tel:0813913091">📞 0813 913 091</a>
+  <div class="socials">
+    <a class="soc-btn" href="https://zalo.me/0813913091" target="_blank" rel="noopener">💬 Nhắn Zalo</a>
+    <a class="soc-btn" href="https://www.facebook.com/profile.php?id=61590438308737" target="_blank" rel="noopener">📘 Facebook</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 <strong>Vũ Lê Travel</strong> — Hotline: <strong style="color:#fff">0813 913 091</strong></p>
+</footer>
+
+<!-- FLOAT CALL BUTTON -->
+<a class="float-btn" href="tel:0813913091" title="Gọi ngay">📞</a>
+
+</body>
+</html>
